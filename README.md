@@ -17,7 +17,7 @@ Clone this repo and run the python script `build.py` with the version of Kibana 
 python build.py -v 8.13.1
 ```
 
-All EPR Assets will be downloaded into a time stamped folder with the Kibana version in the `/build` directory created at the same location as the build.py script.
+All EPR Assets will be downloaded into a time stamped folder with the Kibana version in the `/builds` directory created at the same location as the build.py script.
 
 The timestamped folder will contain an `/integrations` directory with all of the assets and a `Dockerfile` to build the Docker image.
 
