@@ -1,4 +1,4 @@
-# Build a Custom EPR Docker Image for a Specific Kibana Version
+## Build a Custom EPR Docker Image for a Specific Kibana Version
 
 The `builds.py` script downloads all integrations for a selected Kibana version from `https://epr.elastic.co` and generates a Dockerfile that can be used to build an EPR docker image.
 
@@ -9,7 +9,7 @@ Requirements:
 1. Python
 2. Docker
 
-# Extract EPR Assets for a Kibana Version
+## Extract EPR Assets for a Kibana Version
 
 Clone this repo and run the python script `build.py` with the version of Kibana you are targeting:
 
@@ -21,7 +21,7 @@ All EPR Assets will be downloaded into a time stamped folder with the Kibana ver
 
 The timestamped folder will contain an `/integrations` directory with all of the assets and a `Dockerfile` to build the Docker image.
 
-# Build the Image
+## Build the Image
 
 Navigate to the time stamped build folder with the Dockerfile and run the Docker build command with an appropriate tag (-t) and platform (linux/amd64,linux/arm64,linux/arm/v7).
 
@@ -39,7 +39,7 @@ Run and Test Locally
 docker run -it --name epr-8.13.1  -p 8080:8080 elastic-epr/custom:v8.13.1
 ```
 
-# Deploy
+## Deploy
 
 Refer to [Install Fleet Agents - Air-gapped environments](https://www.elastic.co/guide/en/fleet/current/air-gapped.html) for more detailed information.
 
