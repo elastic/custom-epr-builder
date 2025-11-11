@@ -70,7 +70,7 @@ def setup_download_session():
         total=5,  # Total number of retries to allow.
         backoff_factor=1,  # A backoff factor to apply between attempts after the second try.
         status_forcelist=(500, 502, 504),  # A set of HTTP status codes that we should force a retry on.
-        method_whitelist=["HEAD", "GET", "OPTIONS"]  # Optional: set methods to retry
+        allowed_methods=["HEAD", "GET", "OPTIONS"]  # Optional: set methods to retry
     )
     adapter = HTTPAdapter(max_retries=retry_strategy)
     session = requests.Session()
