@@ -14,7 +14,7 @@ Requirements:
 Clone this repo and run the python script `build.py` with the version of Kibana you are targeting:
 
 ```python
-python build.py -v 8.13.1
+python build.py -v 9.4.2
 ```
 
 All EPR Assets will be downloaded into a time stamped folder with the Kibana version in the `/builds` directory created at the same location as the build.py script.
@@ -26,17 +26,17 @@ The timestamped folder will contain an `/integrations` directory with all of the
 Navigate to the time stamped build folder with the Dockerfile and run the Docker build command with an appropriate tag (-t) and platform (linux/amd64,linux/arm64,linux/arm/v7).
 
 ```bash
-docker build . -t elastic-epr/custom:v8.13.1   # This will build to your host machine
+docker build . -t elastic-epr/custom:v9.4.2   # This will build to your host machine
 
-docker build . -t elastic-epr/custom:v8.13.1 --platform=linux/amd64/v3 # Example of a specific platform
+docker build . -t elastic-epr/custom:v9.4.2 --platform=linux/amd64/v3 # Example of a specific platform
 
-docker build . -t elastic-epr/custom:v8.13.1 --platform=linux/amd64,linux/arm64,linux/arm/v7
+docker build . -t elastic-epr/custom:v9.4.2 --platform=linux/amd64,linux/arm64,linux/arm/v7
 ```
 
 Run and Test Locally
 
 ```bash
-docker run -it --name epr-8.13.1  -p 8080:8080 elastic-epr/custom:v8.13.1
+docker run -it --name epr-9.4.2  -p 8080:8080 elastic-epr/custom:v9.4.2
 ```
 
 ## Deploy
@@ -46,23 +46,23 @@ Refer to [Install Fleet Agents - Air-gapped environments](https://www.elastic.co
 1. Save the custom EPR image as a tar file
 
 ```bash
-docker save -o package-registry-custom-8.13.1.tar elastic-epr/custom:v8.13.1
+docker save -o package-registry-custom-9.4.2.tar elastic-epr/custom:v9.4.2
 ```
 
 2. Transfer the image to the air-gapped environment and load it:
 
 ```bash
-docker load -i package-registry-custom-8.13.1.tar
+docker load -i package-registry-custom-9.4.2.tar
 ```
 
 3. Run the Elastic Package Registry:
 
 ```bash
 # Run in the terminal
-docker run -it -p 8080:8080 elastic-epr/custom:v8.13.1
+docker run -it -p 8080:8080 elastic-epr/custom:v9.4.2
 
 # Run in the background
-docker run -d -p 8080:8080 elastic-epr/custom:v8.13.1
+docker run -d -p 8080:8080 elastic-epr/custom:v9.4.2
 ```
 
 4. Connect Kibana to your hosted Elastic Package Registry

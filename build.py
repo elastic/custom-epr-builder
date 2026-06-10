@@ -27,7 +27,7 @@ def parse_arguments():
     parser = CustomArgumentParser(
         description='This script downloads integration files for a specified Kibana version.'
     )
-    parser.add_argument('-v', '--version', required=True, help='Specify the Kibana version. Example: -v 8.11.1')
+    parser.add_argument('-v', '--version', required=True, help='Specify the Kibana version. Example: -v 9.4.2')
     return parser.parse_args().version
 
 def create_dockerfile(base_dir):
