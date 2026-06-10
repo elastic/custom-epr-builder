@@ -7,6 +7,7 @@ builds
 __pycache__/
 *.py[cod]
 *$py.class
+pyvenv.cfg
 
 # C extensions
 *.so
@@ -114,6 +115,7 @@ ipython_config.py
 #   https://pdm.fming.dev/#use-with-ide
 .pdm.toml
 
+
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
@@ -132,6 +134,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+bin/
+lib64
 
 # Spyder project settings
 .spyderproject
